@@ -74,12 +74,15 @@ public class MainComponent
 					stop();
 
 				// TODO: Update Game !!!
+				Time.setDelta(frameTime);
+
 				game.input();
 				game.update();
 
+				// CONSOLE FPS COUnTER
 				if (frameCounter > Time.SECOND)
 				{
-					System.out.println(frames);
+					System.out.println("FPS: " + frames);
 					frames = 0;
 					frameCounter = 0;
 				}
