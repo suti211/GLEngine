@@ -5,7 +5,7 @@ public class MainComponent
 
 	public static final int HEIGTH = 600;
 	public static final int WIDHT = 800;
-	public static final String TITLE = "GLEngine_0.1a";
+	public static final String TITLE = "GLEngine_0.11a";
 	public static final double FRAME_CAP = 5000.0;
 
 	private boolean isRunning;
@@ -75,7 +75,7 @@ public class MainComponent
 
 				// TODO: Update Game !!!
 				Time.setDelta(frameTime);
-
+				Input.update();
 				game.input();
 				game.update();
 
