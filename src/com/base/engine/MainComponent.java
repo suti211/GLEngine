@@ -75,8 +75,8 @@ public class MainComponent
 
 				// TODO: Update Game !!!
 				Time.setDelta(frameTime);
-				Input.update();
 				game.input();
+				Input.update();
 				game.update();
 
 				// CONSOLE FPS COUnTER

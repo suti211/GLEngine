@@ -7,6 +7,8 @@ import org.lwjgl.input.Mouse;
 
 public class Input
 {
+	// !!NOTICE : IT'S POSSIBLE TO MAKE THIS IN A MORE SIMPLE WAY
+
 	public static final int NUM_KEYCODES = 256;
 	public static final int NUM_MOUSEBUTTONS = 7;
 
