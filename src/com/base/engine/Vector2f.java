@@ -85,7 +85,7 @@ public class Vector2f
 		return new Vector2f(x / r, y / r);
 	}
 
-	// ********************************************************
+	// GETTERS & SETTERS(IRISH :D) *************************************
 
 	public String toString()
 	{
