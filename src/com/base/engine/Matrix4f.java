@@ -41,8 +41,12 @@ public class Matrix4f
 		{
 			for (int j = 0; j < 4; j++)
 			{
-				r.set(i, j, m[i][0] * r.get(0, j) + m[i][1] * r.get(1, j)
-						+ m[i][2] * r.get(2, j) + m[i][3] * r.get(3, j));
+				result.set(
+						i,
+						j,
+						m[i][0] * result.get(0, j) + m[i][1] * result.get(1, j)
+								+ m[i][2] * result.get(2, j) + m[i][3]
+								* result.get(3, j));
 			}
 		}
 
