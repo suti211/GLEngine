@@ -26,7 +26,7 @@ public class MainComponent
 	}
 
 	// logic update function
-	public void run()
+	private void run()
 	{
 		while (!Window.isCloseRequested())
 		{
@@ -35,13 +35,13 @@ public class MainComponent
 	}
 
 	// render function
-	public void render()
+	private void render()
 	{
 		Window.render();
 	}
 
 	// Cleanup after closing program
-	public void cleanUp()
+	private void cleanUp()
 	{
 
 	}
