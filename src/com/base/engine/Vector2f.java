@@ -48,7 +48,7 @@ public class Vector2f
 
 	public Vector2f add(float r)
 	{
-		return new Vector2f(x - r, y - r);
+		return new Vector2f(x + r, y + r);
 	}
 
 	public Vector2f subtract(Vector2f r)
