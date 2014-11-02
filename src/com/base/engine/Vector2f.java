@@ -41,6 +41,7 @@ public class Vector2f
 				* cos));
 	}
 
+	// ADDING****************************************************
 	public Vector2f add(Vector2f r)
 	{
 		return new Vector2f(x + r.getX(), y + r.getY());
@@ -51,6 +52,7 @@ public class Vector2f
 		return new Vector2f(x + r, y + r);
 	}
 
+	// SUBTRACTION***********************************************
 	public Vector2f subtract(Vector2f r)
 	{
 		return new Vector2f(x - r.getX(), y - r.getY());
@@ -61,6 +63,7 @@ public class Vector2f
 		return new Vector2f(x - r, y - r);
 	}
 
+	// MULTIPLICATION******************************************
 	public Vector2f multiply(Vector2f r)
 	{
 		return new Vector2f(x * r.getX(), y * r.getY());
@@ -71,6 +74,7 @@ public class Vector2f
 		return new Vector2f(x * r, y * r);
 	}
 
+	// DIVISION **************************************************
 	public Vector2f divide(Vector2f r)
 	{
 		return new Vector2f(x / r.getX(), y / r.getY());
