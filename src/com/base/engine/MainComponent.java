@@ -7,31 +7,43 @@ public class MainComponent
 	public static final int WIDHT = 800;
 	public static final String TITLE = "GLEngine_0.1a";
 
-	// maincomponent skeleton
+	private boolean isRunning;
+
+	// MainComponent skeleton
 	public MainComponent()
 	{
-
+		isRunning = false;
 	}
 
 	// starts the engine ... haha
 	public void start()
 	{
-		run();
+		if (!isRunning) // running check
+			run();
 	}
 
 	// stops the engine
 	public void stop()
 	{
-
+		if (isRunning) // running check
+			isRunning = false;
 	}
 
 	// logic update function
 	private void run()
 	{
-		while (!Window.isCloseRequested())
+		isRunning = true;
+
+		while (isRunning)
 		{
+			if (Window.isCloseRequested())
+				stop();
+
 			render();
 		}
+
+		// the engine isn't running here so we call the cleanup method
+		cleanUp();
 	}
 
 	// render function
@@ -43,7 +55,7 @@ public class MainComponent
 	// Cleanup after closing program
 	private void cleanUp()
 	{
-
+		Window.dispose();
 	}
 
 	public static void main(String[] args)

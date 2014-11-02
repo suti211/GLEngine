@@ -22,6 +22,11 @@ public class Window
 
 	}
 
+	public static void dispose()
+	{
+		Display.destroy();
+	}
+
 	public static void render()
 	{
 		Display.update();
