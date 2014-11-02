@@ -14,6 +14,7 @@ public class MainComponent
 	// MainComponent skeleton
 	public MainComponent()
 	{
+		RenderUtil.initGraphics();
 		isRunning = false;
 		game = new Game();
 
@@ -113,6 +114,7 @@ public class MainComponent
 	// render function
 	private void render()
 	{
+		RenderUtil.clearScreen();
 		game.render();
 		Window.render();
 	}
