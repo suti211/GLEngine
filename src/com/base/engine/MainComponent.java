@@ -9,11 +9,14 @@ public class MainComponent
 	public static final double FRAME_CAP = 5000.0;
 
 	private boolean isRunning;
+	private Game game;
 
 	// MainComponent skeleton
 	public MainComponent()
 	{
 		isRunning = false;
+		game = new Game();
+
 	}
 
 	// starts the engine ... haha
@@ -71,6 +74,8 @@ public class MainComponent
 					stop();
 
 				// TODO: Update Game !!!
+				game.input();
+				game.update();
 
 				if (frameCounter > Time.SECOND)
 				{
@@ -105,6 +110,7 @@ public class MainComponent
 	// render function
 	private void render()
 	{
+		game.render();
 		Window.render();
 	}
 
