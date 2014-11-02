@@ -59,6 +59,7 @@ public class MainComponent
 																	// to
 																	// process
 																	// still
+			frameCounter += passedTime;
 
 			while (unprocessedTime > frameTime)
 			{
@@ -70,11 +71,20 @@ public class MainComponent
 					stop();
 
 				// TODO: Update Game !!!
+
+				if (frameCounter > Time.SECOND)
+				{
+					System.out.println(frames);
+					frames = 0;
+					frameCounter = 0;
+				}
 			}
 
 			if (render)
+			{
 				render();
-			else
+				frames++;
+			} else
 				try
 				{
 					Thread.sleep(1); // if we don't need to render, we don't
