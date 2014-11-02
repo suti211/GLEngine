@@ -71,6 +71,7 @@ public class MainComponent
 
 				// TODO: Update Game !!!
 			}
+
 			if (render)
 				render();
 			else
