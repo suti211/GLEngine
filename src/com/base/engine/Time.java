@@ -2,7 +2,7 @@ package com.base.engine;
 
 public class Time
 {
-	private static final long SECOND = 1000000000L;
+	public static final long SECOND = 1000000000L;
 
 	private static double delta;
 

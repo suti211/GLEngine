@@ -35,12 +35,56 @@ public class MainComponent
 	{
 		isRunning = true;
 
+		int frames = 0;
+		long frameCounter = 0;
+
+		final double frameTime = 1.0 / FRAME_CAP;
+
+		long lastTime = Time.getTime(); // this will the time, when the previous
+										// frame began drawing
+		double unprocessedTime = 0;
+
 		while (isRunning)
 		{
-			if (Window.isCloseRequested())
-				stop();
+			boolean render = false;
 
-			render();
+			long startTime = Time.getTime(); // create this in every frame
+			long passedTime = startTime - lastTime; // we get how much time this
+													// frame took to draw
+			lastTime = startTime; // the current frame is now the previous
+
+			unprocessedTime += passedTime / (double) Time.SECOND; // gets us how
+																	// much time
+																	// we need
+																	// to
+																	// process
+																	// still
+
+			while (unprocessedTime > frameTime)
+			{
+				render = true;
+
+				unprocessedTime -= frameTime;
+
+				if (Window.isCloseRequested())
+					stop();
+
+				// TODO: Update Game !!!
+			}
+			if (render)
+				render();
+			else
+				try
+				{
+					Thread.sleep(1); // if we don't need to render, we don't
+										// waste any time to wait for the loop
+										// to finish
+				} catch (InterruptedException e)
+				{
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
 		}
 
 		// the engine isn't running here so we call the cleanup method
