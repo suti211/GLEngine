@@ -13,16 +13,29 @@ public class Vector3f
 		this.z = x;
 	}
 
+	// LENGTH**************************************************
 	public float length()
 	{
 		return (float) Math.sqrt(x * x + y * y + z * z);
 	}
 
+	// DOT*****************************************************
 	public float dot(Vector3f r)
 	{
 		return x * r.getX() + y * r.getY() + z * r.getZ();
 	}
 
+	// CROSSPRODUCT*******************************************
+	public Vector3f cross(Vector3f r)
+	{
+		float x_ = y * r.getZ() - z * r.getY();
+		float y_ = z * r.getX() - x * r.getZ();
+		float z_ = x * r.getY() - y * r.getX();
+
+		return new Vector3f(x_, y_, z_);
+	}
+
+	// NORMALIZE***********************************************
 	public Vector3f normalize()
 	{
 		float length = length();
@@ -34,6 +47,7 @@ public class Vector3f
 		return this;
 	}
 
+	// ROTATE***************************************************
 	public Vector3f rotate()
 	{
 		return null;
