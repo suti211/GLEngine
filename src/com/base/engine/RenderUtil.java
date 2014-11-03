@@ -27,7 +27,7 @@ public class RenderUtil
 	// initializes openGL
 	public static void initGraphics()
 	{
-		glClearColor(0.2f, 0.0f, 030f, 0.0f); // blackens everything
+		glClearColor(0.0f, 0.0f, 0.0f, 0.0f); // blackens everything
 
 		glFrontFace(GL_CW);
 		glCullFace(GL_BACK); // back face wont be rendered
